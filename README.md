@@ -119,22 +119,6 @@ please obtain the dataset directly from EPFL under their terms.
 
 ---
 
-## ⚖️ License & Disclaimer
-
-1. All original code (metric computation, temporal analysis, the expert rule system,
-   and visualization scripts) is authored by me and released under the **MIT License**.
-
-2. The Ski2DPose dataset used for training is a third-party public resource that carries
-   **no explicit open-source license**; it is not redistributed here.
-
-3. **Disclaimer**: This project is intended solely for **student academic research and
-   non-commercial study of skiing technique**. Model weights are provided for academic
-   demonstration only and must **not** be used for commercial deployment. If the dataset's
-   rights holders have any objection, please contact me and I will promptly remove the
-   relevant files.
-
----
-
 ## 🤖 Use of AI Tools
 
 During development, I used an AI assistant for coding support, while the **core of this project was based on my reasoning**: identifying
