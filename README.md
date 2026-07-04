@@ -33,12 +33,16 @@ Honest, graded technique report
 ---
 
 ## 📁 Repository Structure
-├── ski_physics.py          # Biomechanical metric computation
-├── ski_expert.py           # Expert system: 16 rules + gate + confidence
-├── notebooks/              # Development notebooks (training, analysis)
-├── weights/                # Trained model weights (see weights/README.md)
+
+```
+.
+├── ski_physics.py       # Biomechanical metric computation
+├── ski_expert.py        # Expert system: 16 rules + gate + confidence
+├── notebooks/           # Development notebooks (training, analysis)
+├── weights/             # Trained model weights (see weights/README.md)
 ├── requirements.txt
 └── README.md
+```
 ---
 
 ## 🚀 Quick Start
