@@ -74,6 +74,37 @@ This project deliberately favors **honesty over false precision**:
 
 ---
 
+## 🧗 Key Challenges
+
+**1. 2D pose estimation loses depth, and this breaks angle measurements.**
+By comparing model predictions against ground-truth annotations, I found that end-effector joints (elbows,
+wrists) can be off by over 100°, while core metrics (inclination, angulation, center of
+mass) stayed within a few degrees. This taught me to only build analysis on the metrics
+that are actually trustworthy.
+
+**2. Camera viewpoint may corrupt the data.**
+My turn detection kept classifying every turn as a "right turn." I therefore went back and looked at the raw video frames
+and realized the footage was shot from a distant, front-facing, downward angle. In that viewpoint, left–right
+inclination is compressed by perspective and its sign becomes unreliable. This led me to
+build a **data quality gate** that detects suspicious patterns (e.g. all turns in one
+direction) and lowers confidence rather than pretending to be certain.
+
+**3. "Front vs. back" camera mirrors left and right.**
+A turn that looks "left" in the image is actually the skier leaning *right* if filmed from
+the front. This mirroring means rules dependent on direction can only be trusted once the
+camera orientation is known.
+
+**4. Distinguishing real signal from noise requires looking at trends instead of single frames.**
+Single-frame metrics are noisy. Whether detecting a turn transition, an A-frame, or body
+flexion, I learned to judge based on aggregated trends over a window of frames rather than
+any single instant.
+
+**5. The hardest part was making the system say "I'm not sure."**
+The most valuable feature is not any single rule, but the **confidence propagation**. Each
+piece of advice is only as strong as the weakest of (the rule's inherent reliability, the
+quality of the data it depends on). A system that honestly withholds judgement on bad data
+is more trustworthy than one that always sounds confident.
+
 ## 📊 Dataset & Attribution
 
 The pose model was trained on the **Ski2DPose dataset** from EPFL:
@@ -103,6 +134,12 @@ please obtain the dataset directly from EPFL under their terms.
    relevant files.
 
 ---
+
+## 🤖 Use of AI Tools
+
+During development, I used an AI assistant for coding support, while the **core of this project was based on my reasoning**: identifying
+problems, such as the viewpoint distortion and the front/back mirroring issue, questioning
+assumptions, deciding which metrics to trust, and choosing the honest "confidence-aware" design philosophy. 
 
 ## 👤 Author
 
