@@ -114,8 +114,6 @@ The pose model was trained on the **Ski2DPose dataset** from EPFL:
 > International Conference on 3D Vision (3DV), 2019.
 > Dataset: https://www.epfl.ch/labs/cvlab/data/ski-2dpose-dataset/
 
-**The dataset itself is NOT redistributed in this repository.** To reproduce training,
-please obtain the dataset directly from EPFL under their terms.
 
 ---
 
