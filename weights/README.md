@@ -14,16 +14,6 @@
 - **Base**: YOLO-pose (nano)
 - **Validation**: Pose mAP@50 ≈ 0.96 on the Ski2DPose validation split
 
-## ⚠️ Source & Usage Notice
-
-These weights were trained on the **Ski2DPose dataset (EPFL)**, a third-party public
-dataset that carries **no explicit open-source license**. The original dataset is **not**
-redistributed with these weights.
-
-- Provided for **academic research and demonstration only**.
-- **Commercial use is not permitted.**
-- If the dataset's rights holders object, the weights will be removed upon request.
-
 ## Reproduction
 
 To retrain from scratch, obtain the Ski2DPose dataset directly from EPFL and follow the
